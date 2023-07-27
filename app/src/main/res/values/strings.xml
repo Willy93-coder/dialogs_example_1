@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Dialogs example 1</string>
+    <string name="my_first_dialog">Mi primer dialogo</string>
+    <string name="btn_dialog_fragment">Mostrar con dialogFragment</string>
 </resources>
