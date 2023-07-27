@@ -24,6 +24,9 @@ class MainActivity : AppCompatActivity() {
                 myAlertDialog("Este es el segundo dialog, " +
                         "se utiliza la clase AlertDialog para mostrarlo.")
             }
+            btnFunDialogList.setOnClickListener {
+                myAlertDialogList("Dilog que muestra una lista.")
+            }
         }
         setContentView(binding.root)
     }
@@ -57,6 +60,20 @@ class MainActivity : AppCompatActivity() {
             }
         }
         // Se muestra el dialog
+        builder.show()
+    }private fun myAlertDialogList(message: String) {
+        val builder = AlertDialog.Builder(this)
+        val namesArray = resources.getStringArray(R.array.array_names)
+        builder.apply {
+            setTitle("Dialogo con lista de nombres")
+            setItems(R.array.array_names){ _, which ->
+                Toast.makeText(
+                    context,
+                    namesArray[which],
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
         builder.show()
     }
 }
