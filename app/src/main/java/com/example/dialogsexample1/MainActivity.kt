@@ -11,6 +11,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        with(binding){
+            btnDialogFragment.setOnClickListener {
+                val myDialogFragment = MyDialogFragment()
+                myDialogFragment.show(supportFragmentManager, "teGusta")
+            }
+        }
         setContentView(binding.root)
     }
 }
